@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <Cars/>
+      <Cars cars={topCars}/>
       </header>
     </div>
   );
