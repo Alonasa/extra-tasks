@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Cars} from './Cars';
+import {MapMethod} from './MapMethod';
 
 function App() {
   const topCars = [
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <Cars cars={topCars}/>
+      <MapMethod cars={topCars}/>
       </header>
     </div>
   );

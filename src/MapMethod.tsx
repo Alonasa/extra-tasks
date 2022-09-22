@@ -9,7 +9,7 @@ type CarType = {
   model: string
 }
 
-export const Cars = (props: CarsType) => {
+export const MapMethod = (props: CarsType) => {
   return (
 	<>
 	  <div>
