@@ -11,9 +11,10 @@ type CarType = {
 
 export const MapMethod = (props: CarsType) => {
   return (
-	<>
+	<div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'white', padding: '20px', borderBottom: '2px solid white'}}>
+	  <h2 style={{color: 'antiquewhite'}}>We realized map method. TASK 1</h2>
 	  <div>
-		<h3>We have available cars for a rent in li</h3>
+		<h3>Available cars for a rent in li</h3>
 		<ul style={{listStyle: 'none', textAlign: 'left'}}>
 		  {props.cars.map((car, index) => {
 			return (
@@ -47,7 +48,7 @@ export const MapMethod = (props: CarsType) => {
 		</table>
 	  
 	  </div>
-	</>
+	</div>
   )
 	;
 };

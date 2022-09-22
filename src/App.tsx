@@ -10,9 +10,7 @@ function App() {
   ]
   return (
     <div className="App">
-      <header className="App-header">
       <MapMethod cars={topCars}/>
-      </header>
     </div>
   );
 }
