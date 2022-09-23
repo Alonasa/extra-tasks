@@ -5,6 +5,8 @@ import {Button} from './components/Button';
 import {UseState} from './components/UseState';
 import {Filter} from './components/Filter';
 
+export type filterType = 'All' | 'Dollars' | 'RUBLS';
+
 function App() {
   const topCars = [
     {manufacturer: 'BMW', model: 'm5cs'},
@@ -23,7 +25,6 @@ function App() {
     {banknots: 'RUBLS', value: 50, number: ' v1234567890'},
   ])
   
-  type filterType = 'All' | 'Dollars' | 'RUBLS';
   let [filter, setFilter] = useState<filterType>('All')
   
   let wallet = money
@@ -46,7 +47,7 @@ function App() {
       <MapMethod cars={topCars}/>
       <Button/>
       <UseState/>
-      <Filter wallet={wallet}/>
+      <Filter wallet={wallet} selectHandler={selectHandler}/>
     </div>
   );
 }
