@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import {MapMethod} from './MapMethod';
-import {Button} from './Button';
-import {UseState} from './UseState';
+import {MapMethod} from './components/MapMethod';
+import {Button} from './components/Button';
+import {UseState} from './components/UseState';
 
 function App() {
   const topCars = [
