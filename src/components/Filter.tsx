@@ -1,6 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-export const Filter = () => {
+type FilterItemType = {
+  banknots: string
+  value: number
+  number: string
+}
+
+type FilterType = {
+  wallet: Array<FilterItemType>
+}
+
+export const Filter = (props: FilterType) => {
   
   return (
 	<>
@@ -8,7 +18,7 @@ export const Filter = () => {
 	  <button onClick={() => selectHandler('RUBLS')}>Rubble</button>
 	  <button onClick={() => selectHandler('Dollars')}>USD</button>
 	  <ul style={{listStyle: 'none'}}>
-		{wallet.map((m, index) => {
+		{props.wallet.map((m, index) => {
 		  return (
 			<li key={index}>
 			  <span>{m.banknots}  </span>

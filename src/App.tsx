@@ -46,7 +46,7 @@ function App() {
       <MapMethod cars={topCars}/>
       <Button/>
       <UseState/>
-      <Filter/>
+      <Filter wallet={wallet}/>
     </div>
   );
 }
