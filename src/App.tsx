@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {MapMethod} from './MapMethod';
 import {Button} from './Button';
+import {UseState} from './UseState';
 
 function App() {
   const topCars = [
@@ -13,6 +14,7 @@ function App() {
     <div className="App">
       <MapMethod cars={topCars}/>
       <Button/>
+      <UseState/>
     </div>
   );
 }
