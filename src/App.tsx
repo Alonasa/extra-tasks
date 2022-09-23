@@ -3,6 +3,7 @@ import './App.css';
 import {MapMethod} from './components/MapMethod';
 import {Button} from './components/Button';
 import {UseState} from './components/UseState';
+import {Filter} from './components/Filter';
 
 function App() {
   const topCars = [
@@ -15,6 +16,7 @@ function App() {
       <MapMethod cars={topCars}/>
       <Button/>
       <UseState/>
+      <Filter/>
     </div>
   );
 }
