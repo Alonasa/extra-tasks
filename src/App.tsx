@@ -4,6 +4,7 @@ import {MapMethod} from './components/MapMethod';
 import {Button} from './components/Button';
 import {UseState} from './components/UseState';
 import {Filter} from './components/Filter';
+import {UniversalInput} from './components/UniversalInput';
 
 export type filterType = 'All' | 'Dollars' | 'RUBLS';
 
@@ -48,6 +49,7 @@ function App() {
       <Button/>
       <UseState/>
       <Filter wallet={wallet} selectHandler={selectHandler}/>
+      <UniversalInput/>
     </div>
   );
 }
