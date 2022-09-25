@@ -7,6 +7,10 @@ import {Filter} from './components/Filter';
 import {UniversalInput} from './components/UniversalInput';
 
 export type filterType = 'All' | 'Dollars' | 'RUBLS';
+export type TaskType = {
+  id: number
+  title: string
+}
 
 function App() {
   const topCars = [
@@ -26,6 +30,11 @@ function App() {
     {banknots: 'RUBLS', value: 50, number: ' v1234567890'},
   ])
   
+  const [task, setTask] = useState([
+    {id: 10, title: 'Hi'},
+    {id: 11, title: 'How are you?'}
+  ])
+  
   let [filter, setFilter] = useState<filterType>('All')
   
   let wallet = money
@@ -42,6 +51,10 @@ function App() {
     setFilter(option)
   }
   
+  const addTask = (newTask: TaskType) => {
+    setTask([...task, newTask])
+  }
+  
   
   return (
     <div className="App">
@@ -49,7 +62,10 @@ function App() {
       <Button/>
       <UseState/>
       <Filter wallet={wallet} selectHandler={selectHandler}/>
-      <UniversalInput/>
+      <UniversalInput addTask={addTask}/>
+      {task.map(t=> {
+        return( <div key={t.id}>{t.title}</div>)
+      })}
     </div>
   );
 }

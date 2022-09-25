@@ -1,10 +1,24 @@
-import React from 'react';
+import React, {ChangeEvent, useState} from 'react';
+import {TaskType} from '../App';
 
-export const UniversalInput = () => {
+type UniversalInputType = {
+  addTask: (newTask: TaskType) => void
+}
+
+export const UniversalInput = (props: UniversalInputType) => {
+  let [title, setTitle] = useState('');
+  const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    setTitle(e.currentTarget.value)
+  }
+  const onClickHandler = () => {
+    const newTask:TaskType = {id:12, title: title};
+	props.addTask(newTask);
+	setTitle('')
+  }
   return (
-	<>
-	  <input></input>
-	  <button style={{marginBottom: '50px'}}>+</button>
-	</>
+	<div style={{marginBottom: '20px'}}>
+	  <input value={title} onChange={onChangeHandler}></input>
+	  <button onClick={onClickHandler}>+</button>
+	</div>
   );
 };
