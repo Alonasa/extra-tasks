@@ -5,6 +5,7 @@ import {Button} from './components/Button';
 import {UseState} from './components/UseState';
 import {Filter} from './components/Filter';
 import {UniversalInput} from './components/UniversalInput';
+import {IndependentButton} from './components/IndependentButton';
 
 export type filterType = 'All' | 'Dollars' | 'RUBLS';
 export type TaskType = {
@@ -66,6 +67,7 @@ function App() {
       {task.map(t=> {
         return( <div key={t.id}>{t.title}</div>)
       })}
+      <IndependentButton callback={()=>{}}/>
     </div>
   );
 }
