@@ -52,7 +52,7 @@ function App() {
   }
   
   const addTask = (newTask: TaskType) => {
-    setTask([...task, newTask])
+    setTask([newTask, ...task])
   }
   
   
