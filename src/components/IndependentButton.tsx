@@ -1,6 +1,7 @@
 import React from 'react';
 
 type IndependentButtonType = {
+  name: string
   callback: () => void
 }
 
@@ -9,6 +10,6 @@ export const IndependentButton = (props: IndependentButtonType) => {
     props.callback()
   }
   return (
-	<button onClick={onClickHandler}>+</button>
+	<button onClick={onClickHandler}>{props.name}</button>
   );
 };

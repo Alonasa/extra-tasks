@@ -2,17 +2,16 @@ import React, {ChangeEvent, useState} from 'react';
 
 type InputType = {
   title: string
-  onChangeHandler: () => void
+  func: (e: string) => void
 }
 
 
 export const Input = (props: InputType) => {
-  let [title, setTitle] = useState('');
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-	setTitle(e.currentTarget.value)
+	props.func(e.currentTarget.value)
   }
   
   return (
-	<input value={props.title} onChange={props.onChangeHandler}></input>
+	<input value={props.title} onChange={onChangeHandler}></input>
   );
 };

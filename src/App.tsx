@@ -6,6 +6,7 @@ import {UseState} from './components/UseState';
 import {Filter} from './components/Filter';
 import {UniversalInput} from './components/UniversalInput';
 import {IndependentButton} from './components/IndependentButton';
+import {Input} from './components/Input';
 
 export type filterType = 'All' | 'Dollars' | 'RUBLS';
 export type TaskType = {
@@ -56,6 +57,13 @@ function App() {
     setTask([newTask, ...task])
   }
   
+  let [title, setTitle] = useState('');
+  
+  const onClickHandler = () => {
+    const newTask:TaskType = {id:12, title: title};
+    addTask(newTask);
+    setTitle('')
+  }
   
   return (
     <div className="App">
@@ -67,7 +75,8 @@ function App() {
       {task.map(t=> {
         return( <div key={t.id}>{t.title}</div>)
       })}
-      <IndependentButton callback={()=>{}}/>
+      <Input title={title} func={setTitle}/>
+      <IndependentButton name={'+'} callback={onClickHandler}/>
     </div>
   );
 }
